@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeroTrace OS | Independent Cybersecurity Project</title>
+    <title>ZeroTrace OS | مشروع الفريق المستقل</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Orbitron:wght@400;700&family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0081ff;
-            --bg-dark: #05070a;
-            --card-bg: #0d1117;
-            --code-bg: #161b22;
-            --text-gray: #8892b0;
-        }
-
+        :root { --primary: #0081ff; --bg-dark: #05070a; --card-bg: #0d1117; --code-bg: #161b22; --text-gray: #8892b0; }
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { background-color: var(--bg-dark); color: #e6f1ff; font-family: 'Tajawal', sans-serif; line-height: 1.6; }
 
-        /* Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 5%; background: rgba(5, 7, 10, 0.98);
@@ -29,12 +21,126 @@
         .nav-links a { text-decoration: none; color: var(--text-gray); font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
-        /* Hero Section */
         .hero {
             display: flex; align-items: center; justify-content: center;
-            padding: 80px 5%; min-height: 85vh; gap: 0;
+            padding: 80px 5%; min-height: 85vh;
             background: radial-gradient(circle at 50% 50%, #0d1b2e 0%, #05070a 100%);
         }
+        .hero-left { flex: 1; text-align: left; padding-right: 50px; direction: ltr; }
+        .vertical-line { width: 2px; height: 450px; background-color: white; margin: 0 40px; }
+        .hero-right { flex: 1; text-align: center; padding-left: 50px; }
+        .main-logo { width: 260px; mix-blend-mode: screen; }
+        .ascii-art { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid #30363d; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        .improvement-tag {
+            display: block; margin-top: 20px; color: #00d2ff;
+            font-family: 'Fira Code', monospace; font-size: 1rem;
+            border-right: 2px solid #00d2ff; white-space: nowrap; overflow: hidden; width: fit-content;
+            margin-left: auto; margin-right: auto;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #00d2ff; } }
+
+        .btn-main {
+            background: var(--primary); color: white; padding: 12px 25px;
+            border-radius: 4px; text-decoration: none; font-weight: bold;
+            display: inline-block; transition: 0.3s; font-family: 'Orbitron'; font-size: 0.8rem;
+        }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 0 15px var(--primary); }
+
+        .section { padding: 100px 10% 60px; }
+        .section-title { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 15px; }
+        .blog-card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #21262d; margin-bottom: 30px; }
+        
+        pre {
+            background: var(--code-bg); padding: 20px; border-radius: 5px;
+            font-family: 'Fira Code', monospace; font-size: 0.85rem;
+            color: #d1d5da; overflow-x: auto; border: 1px solid #30363d;
+            margin-top: 15px; direction: ltr; text-align: left;
+        }
+
+        .download-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 15px; margin: 30px 0;
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #21262d; color: var(--text-gray); font-size: 0.8rem; }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; }
+            .vertical-line { display: none; }
+            .hero-left, .hero-right { padding: 20px; text-align: center; direction: rtl; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo-text">ZERO<span>TRACE</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">Project</a></li>
+            <li><a href="#build">Build Info</a></li>
+            <li><a href="#download">Download</a></li>
+        </ul>
+        <div style="font-size: 0.8rem; font-family: 'Orbitron'; color: var(--primary);">v1.0 STABLE</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-left">
+            <img src="646168443_1427576485513282_2247754882077903395_n.jpg" alt="Logo" class="main-logo">
+            <h1 style="font-family: 'Orbitron'; font-size: 3rem; color: white;">ZeroTrace OS</h1>
+            <p>مشروع تقني مستقل طوره فريق من الشباب المبدعين لتقديم بيئة اختبار أمنية سريعة، متخفية وقوية.</p>
+            <a href="#download" class="btn-main" style="margin-top: 25px; font-size: 1rem; padding: 15px 35px;">تحميل الإصدار المستقر</a>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="hero-right">
+            <img src="Screenshot_20260314_142023.png" alt="Terminal" class="ascii-art">
+            <span class="improvement-tag">> [SYSTEM OPTIMIZATION: ACTIVE]</span>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <h2 class="section-title">عن المشروع</h2>
+        <div class="blog-card">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                نحن فريق مستقل من المطورين نهدف لكسر القيود التقنية وتوفير أدوات حماية متطورة للجميع. <strong>ZeroTrace</strong> صُمم ليكون توزيعة خفيفة تدمج بين القوة والخصوصية التامة في اختبار الأنظمة.
+            </p>
+        </div>
+    </section>
+
+    <section id="download" class="section">
+        <h2 class="section-title">مركز التحميل</h2>
+        <div class="blog-card" style="text-align: center; border: 2px solid var(--primary); padding: 40px;">
+            <h3>Download Files (4.5GB Total)</h3>
+            <p style="margin: 15px 0; color: var(--text-gray);">يرجى تحميل كافة الأجزاء ووضعها في مجلد واحد قبل البدء بالدمج:</p>
+            
+            <div class="download-grid">
+                <a href="#" class="btn-main">Part AA</a>
+                <a href="#" class="btn-main">Part AB</a>
+                <a href="#" class="btn-main">Part AC</a>
+                <a href="#" class="btn-main">Part AD</a>
+                <a href="#" class="btn-main">Part AE</a>
+                <a href="#" class="btn-main">Part AF</a>
+                <a href="#" class="btn-main">Part AG</a>
+            </div>
+
+            <div style="background: #05070a; padding: 20px; border-radius: 8px; text-align: left; border: 1px solid #30363d;">
+                <p style="color: #00d2ff; font-family: 'Fira Code'; font-size: 0.8rem; margin-bottom: 10px;"># لدمج الأجزاء في نظام Linux:</p>
+                <code style="color: #fff; font-family: 'Fira Code';">cat zerotrace.iso.part-* > zerotrace.iso</code>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 ZeroTrace OS Project - Independently Developed by Youth Team</p>
+    </footer>
+
+</body>
+</html>        }
 
         .hero-left { flex: 1; text-align: left; padding-right: 50px; direction: ltr; }
         
