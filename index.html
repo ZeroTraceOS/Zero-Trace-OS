@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeroTrace OS | Project Hub</title>
+    <title>ZeroTrace OS | Independent Cybersecurity Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Orbitron:wght@400;700&family=Tajawal:wght@300;500;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,162 +11,30 @@
             --bg-dark: #05070a;
             --card-bg: #0d1117;
             --code-bg: #161b22;
+            --text-gray: #8892b0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background-color: var(--bg-dark); color: #e6f1ff; font-family: 'Tajawal', sans-serif; }
+        body { background-color: var(--bg-dark); color: #e6f1ff; font-family: 'Tajawal', sans-serif; line-height: 1.6; }
 
+        /* Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 5%; background: rgba(5, 7, 10, 0.95);
+            padding: 1rem 5%; background: rgba(5, 7, 10, 0.98);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; z-index: 1000;
         }
-        .logo-text { font-family: 'Orbitron'; font-weight: bold; font-size: 1.5rem; color: white; text-decoration: none; }
+        .logo-text { font-family: 'Orbitron'; font-weight: bold; font-size: 1.4rem; color: white; text-decoration: none; }
         .logo-text span { color: var(--primary); }
-        
-        .nav-links { display: flex; list-style: none; gap: 25px; }
-        .nav-links a { text-decoration: none; color: #8892b0; font-size: 0.9rem; transition: 0.3s; font-weight: 500; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text-gray); font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
         /* Hero Section */
         .hero {
             display: flex; align-items: center; justify-content: center;
-            padding: 100px 5%; min-height: 85vh; gap: 0;
+            padding: 80px 5%; min-height: 85vh; gap: 0;
             background: radial-gradient(circle at 50% 50%, #0d1b2e 0%, #05070a 100%);
         }
-
-        .hero-left { flex: 1; text-align: left; padding-right: 60px; direction: ltr; }
-        
-        /* الخط العامودي الأبيض الصريح */
-        .vertical-line {
-            width: 2px;
-            height: 400px;
-            background-color: white;
-            margin: 0 50px;
-        }
-
-        .hero-right { flex: 1; text-align: center; padding-left: 60px; }
-
-        .main-logo {
-            width: 280px;
-            background: transparent;
-            mix-blend-mode: screen; /* لإزالة أي خلفية سوداء متبقية في الصورة */
-        }
-
-        .ascii-art {
-            width: 100%; max-width: 520px;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .improvement-tag {
-            display: block; margin-top: 25px; color: #00d2ff;
-            font-family: 'Fira Code', monospace; font-size: 1.1rem;
-            border-right: 3px solid #00d2ff;
-            white-space: nowrap; overflow: hidden; width: fit-content;
-            margin-left: auto; margin-right: auto;
-            animation: typing 3s steps(40, end), blink .75s step-end infinite;
-        }
-
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink { from, to { border-color: transparent } 50% { border-color: #00d2ff } }
-
-        .btn-main {
-            background: var(--primary); color: white; padding: 14px 35px;
-            border-radius: 4px; text-decoration: none; font-weight: bold;
-            display: inline-block; margin-top: 30px; transition: 0.3s;
-            font-family: 'Orbitron'; letter-spacing: 1px;
-        }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 129, 255, 0.3); }
-
-        /* Sections */
-        .section { padding: 100px 10% 80px; }
-        .section-title { font-size: 2.2rem; margin-bottom: 40px; border-left: 5px solid var(--primary); padding-left: 20px; font-family: 'Orbitron'; }
-        .blog-card { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid #21262d; margin-bottom: 30px; }
-        
-        pre {
-            background: var(--code-bg); padding: 25px; border-radius: 8px;
-            font-family: 'Fira Code', monospace; font-size: 0.9rem;
-            color: #d1d5da; overflow-x: auto; border: 1px solid #30363d;
-            margin-top: 20px; direction: ltr; text-align: left;
-        }
-
-        footer { text-align: center; padding: 50px; border-top: 1px solid #21262d; color: #8892b0; font-size: 0.9rem; }
-
-        @media (max-width: 1000px) {
-            .hero { flex-direction: column; text-align: center; }
-            .vertical-line { display: none; }
-            .hero-left, .hero-right { padding: 40px 20px; direction: rtl; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#" class="logo-text">ZERO<span>TRACE</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About Project</a></li>
-            <li><a href="#build-logs">Build Code</a></li>
-            <li><a href="#download">Download ISO</a></li>
-        </ul>
-        <div style="font-family: 'Orbitron'; font-size: 0.8rem; color: #555;">v1.0 STABLE</div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-left">
-            <img src="646168443_1427576485513282_2247754882077903395_n.jpg" alt="ZeroTrace" class="main-logo">
-            <h1 style="font-family: 'Orbitron'; font-size: 3.2rem; color: white; margin-bottom: 15px;">ZeroTrace OS</h1>
-            <p style="color: #8892b0; font-size: 1.2rem; max-width: 500px;">توزيعة سيبرانية متطورة صممها فريق من الشباب المبدعين لتوفير بيئة اختبار اختراق آمنة وسريعة.</p>
-            <a href="#download" class="btn-main">GET THE ISO</a>
-        </div>
-
-        <div class="vertical-line"></div>
-
-        <div class="hero-right">
-            <img src="Screenshot_20260314_142023.png" alt="System Terminal" class="ascii-art">
-            <span class="improvement-tag">> [SYSTEM OPTIMIZATION: PARROT_OS_ECHO_STABLE]</span>
-        </div>
-    </header>
-
-    <section id="about" class="section">
-        <h2 class="section-title">عن المشروع</h2>
-        <div class="blog-card">
-            <p style="font-size: 1.2rem; line-height: 1.8;">
-                <strong>ZeroTrace OS</strong> هو مشروع تقني مستقل، صُمم وطُور بواسطة فريق من الشباب المتحمسين لعالم الأمن السيبراني. 
-                هدفنا هو تقديم نظام تشغيل يجمع بين القوة والتخفي، مع تعديلات جوهرية على النواة والواجهة لتلبي احتياجات المطورين والخبراء الأمنيين في العصر الحديث.
-            </p>
-        </div>
-    </section>
-
-    <section id="build-logs" class="section">
-        <h2 class="section-title">سجل بناء التوزيعة</h2>
-        <div class="blog-card">
-            <h3 style="color: var(--primary);">1. معالجة حجم النظام (SquashFS)</h3>
-            <p>لتقليل حجم النظام النهائي مع الحفاظ على الأداء، استخدمنا تقنيات ضغط متطورة:</p>
-            <pre>mksquashfs /source /dest -comp gzip -processors $(nproc) -allow-limited-size</pre>
-        </div>
-        <div class="blog-card">
-            <h3 style="color: var(--primary);">2. تخصيص بيئة المستخدم</h3>
-            <p>تم دمج حزم مخصصة لضمان الخصوصية التامة أثناء العمل:</p>
-            <pre>sudo apt install brave-browser tor-adapter -y</pre>
-        </div>
-    </section>
-
-    <section id="download" class="section" style="text-align: center;">
-        <h2 class="section-title" style="border: none; text-align: center; padding: 0;">جاهز للتحميل؟</h2>
-        <div class="blog-card" style="border: 2px dashed var(--primary); margin-top: 30px;">
-            <p style="margin-bottom: 20px; font-size: 1.1rem;">يمكنك الحصول على النسخة المستقرة الآن من مستودع المشروع على GitHub.</p>
-            <a href="https://github.com/ZeroTraceOS/Zero-Trace-OS/releases" class="btn-main">DOWNLOAD ISO</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 ZeroTrace OS - Designed & Developed by Talented Youth Team</p>
-    </footer>
-
-</body>
-</html>        }
 
         .hero-left { flex: 1; text-align: left; padding-right: 50px; direction: ltr; }
         
@@ -183,7 +51,7 @@
         .main-logo {
             width: 260px;
             background: transparent;
-            mix-blend-mode: screen; /* إزالة الخلفية السوداء للوجو */
+            mix-blend-mode: screen; /* لإزالة أي خلفية متبقية للوجو */
         }
 
         .ascii-art {
@@ -193,14 +61,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* نص التيرمينال المتحرك */
         .improvement-tag {
             display: block; margin-top: 20px; color: #00d2ff;
             font-family: 'Fira Code', monospace; font-size: 1rem;
             border-right: 2px solid #00d2ff;
-            white-space: nowrap;
-            overflow: hidden;
-            width: fit-content;
+            white-space: nowrap; overflow: hidden; width: fit-content;
             margin-left: auto; margin-right: auto;
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
@@ -218,7 +83,7 @@
 
         /* Sections Styling */
         .section { padding: 100px 10% 60px; }
-        .section-title { font-size: 2rem; margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 15px; }
+        .section-title { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 15px; }
 
         .blog-card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #21262d; margin-bottom: 30px; }
         
@@ -247,19 +112,19 @@
     <nav>
         <a href="#" class="logo-text">ZERO<span>TRACE</span></a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#build-logs">Build Code</a></li>
-            <li><a href="#download">Download</a></li>
+            <li><a href="#about">About Project</a></li>
+            <li><a href="#build-logs">Build Logs</a></li>
+            <li><a href="#download">Download ISO</a></li>
         </ul>
-        <div style="font-size: 0.9rem; font-weight: bold; color: white;">سلطنة عُمان 🇴🇲</div>
+        <div style="font-size: 0.8rem; font-family: 'Orbitron'; color: var(--primary);">BUILD v1.0 STABLE</div>
     </nav>
 
     <header class="hero">
         <div class="hero-left">
             <img src="646168443_1427576485513282_2247754882077903395_n.jpg" alt="ZeroTrace Logo" class="main-logo">
             <h1 style="font-family: 'Orbitron'; font-size: 3rem; color: white;">ZeroTrace OS</h1>
-            <p> تطوير شبابي  عن الجنائيات الرقميه والهندسه العكسيه.</p>
-            <a href="#download" class="btn-main">GET ISO V1.0</a>
+            <p>بيئة متكاملة مخصصة لاختبار الاختراق والتحليل الأمني الرقمي، تم تطويرها بواسطة فريق مستقل من الشباب المبدعين.</p>
+            <a href="#download" class="btn-main">GET THE SYSTEM</a>
         </div>
 
         <div class="vertical-line"></div>
@@ -271,75 +136,54 @@
     </header>
 
     <section id="about" class="section">
-        <h2 class="section-title">عن المشروع (About)</h2>
+        <h2 class="section-title">PROJECT GOALS</h2>
         <div class="blog-card">
             <p style="font-size: 1.1rem; line-height: 1.8;">
-                مشروع <strong>ZeroTrace OS</strong> هو مبادرة تقنية وطنية تهدف لتوفير نظام تشغيل آمن ومخصص لاختبار الاختراق والتحليل الجنائي الرقمي. 
-                تم العمل عليه بروح الفريق الواحد بين مطورين من <strong>سلطنة عُمان</strong> و<strong>سوريا</strong> لتقديم حلول سيبرانية تضاهي الأنظمة العالمية بميزات خصوصية فريدة وتعديلات جوهرية على الأداء.
+                مشروع <strong>ZeroTrace OS</strong> هو مبادرة تقنية تهدف لتقديم توزيعة "لا تترك أثراً". صُمم النظام ليكون خفيفاً وسريعاً ومزوداً بأحدث أدوات الأمن السيبراني. 
+                تم العمل على هذا المشروع برؤية شبابية تسعى لكسر الحواجز التقنية وتوفير أدوات احترافية للجميع بشكل مستقل ومفتوح المصدر.
             </p>
         </div>
     </section>
 
     <section id="build-logs" class="section">
-        <h2 class="section-title">سجل بناء النظام (Build Code)</h2>
+        <h2 class="section-title">BUILD CONFIGURATION</h2>
         
-        <div class="blog-container">
-            <div class="blog-card">
-                <span class="tag">UI Customization</span>
-                <h3>تخصيص هوية الـ Bootloader</h3>
-                <p>الأمر المستخدم لتغيير صورة خلفية الـ Grub بنجاح:</p>
-                <pre>sudo cp ~/Downloads/desktop-background.jpg /boot/grub/grub-16x9.jpg && sudo update-grub</pre>
-            </div>
+        <div class="blog-card">
+            <span class="tag">Security Fix</span>
+            <h3>تعطيل التتبع وتخصيص النواة</h3>
+            <p>تم إجراء تعديلات جوهرية على إعدادات الخصوصية الافتراضية لضمان أقصى درجات التخفي:</p>
+            <pre>sudo apt remove --purge unattended-upgrades && sudo apt install tor-adapter</pre>
+        </div>
 
-            <div class="blog-card">
-                <span class="tag">System Fix</span>
-                <h3>تنظيف المستودعات وإصلاح الـ APT</h3>
-                <p>حل مشكلة أخطاء 404 التي تظهر عند تحديث النظام:</p>
-                <pre>sudo rm /etc/apt/sources.list.d/cubic.list && sudo apt update</pre>
-            </div>
-
-            <div class="blog-card">
-                <span class="tag">Performance</span>
-                <h3>تسريع الضغط بجميع الأنوية</h3>
-                <p>استخدام المعالج بالكامل لإنتاج ملف الـ ISO بسرعة قصوى:</p>
-                <pre>mksquashfs /source /destination -comp gzip -processors $(nproc)</pre>
-            </div>
+        <div class="blog-card">
+            <span class="tag">ISO Engineering</span>
+            <h3>معالجة أحجام الملفات الكبيرة</h3>
+            <p>لضمان استقرار النظام عند الأحجام الكبيرة، تم استخدام خوارزمية ضغط متطورة:</p>
+            <pre>mksquashfs /source /destination -comp gzip -allow-limited-size</pre>
         </div>
     </section>
 
     <section id="download" class="section">
-        <h2 class="section-title">التحميل (Download)</h2>
-        <div class="blog-card" style="text-align: center; border: 2px dashed var(--primary); padding: 50px;">
+        <h2 class="section-title">DOWNLOAD CENTER</h2>
+        <div class="blog-card" style="text-align: center; border: 2px solid var(--primary); padding: 50px;">
             <h3>ZeroTrace OS v1.0 Stable</h3>
-            <p style="margin: 20px 0; color: var(--text-gray);">الحجم التقريبي: 3.2 GB | النوع: ISO Image</p>
-            <a href="#" class="btn-main" id="githubDownloadBtn">Download Latest ISO</a>
+            <p style="margin: 20px 0; color: var(--text-gray);">الحجم الإجمالي: 4.2 GB | تم التقسيم لسهولة التحميل</p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px;">
+                <a href="#" class="btn-main" style="background: #161b22; border: 1px solid var(--primary);">Part 1 (2GB)</a>
+                <a href="#" class="btn-main" style="background: #161b22; border: 1px solid var(--primary);">Part 2 (2.2GB)</a>
+            </div>
+
+            <div style="background: #05070a; padding: 20px; border-radius: 8px; text-align: left; border: 1px solid #30363d;">
+                <p style="color: #00d2ff; font-family: 'Fira Code'; font-size: 0.85rem; margin-bottom: 10px;">// بعد تحميل الجزئين، استخدم الأمر التالي لدمجهما:</p>
+                <code style="color: #fff; font-family: 'Fira Code';">cat zerotrace.iso.part-aa zerotrace.iso.part-ab > zerotrace.iso</code>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 ZeroTrace OS - Omani & Syrian Youth Team 🇴🇲</p>
+        <p>© 2026 ZeroTrace OS - Designed & Developed by Talented Youth Team</p>
     </footer>
 
-    <script>
-        // برمجية الربط التلقائي بـ GitHub
-        // فقط قم بتغيير هذه القيم عندما ترفع الملف لـ GitHub
-        const githubUsername = "zerotraceos"; // اسمك على جت هب
-        const repoName = "ZeroTrace-OS";     // اسم المستودع
-
-        const downloadBtn = document.getElementById('githubDownloadBtn');
-        
-        // الرابط سيشير تلقائياً لملف الـ ISO في قسم الـ Releases
-        const isoUrl = `https://github.com/${githubUsername}/${repoName}/releases/latest/download/zerotrace.iso`;
-        
-        downloadBtn.href = isoUrl;
-
-        // التحقق من وجود الملف (اختياري)
-        downloadBtn.addEventListener('click', (e) => {
-            if(downloadBtn.getAttribute('href') === "#") {
-                alert("جاري رفع الملف على مستودع GitHub... يرجى المحاولة لاحقاً.");
-                e.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>
